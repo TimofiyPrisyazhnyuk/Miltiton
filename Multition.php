@@ -1,7 +1,8 @@
 <?php
 
-namespace Multition;
-
+/**
+ * Class Multition
+ */
 class Multition
 {
     const INSTANCE_1 = '1First';
@@ -19,6 +20,10 @@ class Multition
     {
     }
 
+    /**
+     * @param string $instanceName
+     * @return Multition
+     */
     public static function getInstance(string $instanceName): Multition
     {
         if (!isset(self::$instances[$instanceName])) {

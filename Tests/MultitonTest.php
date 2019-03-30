@@ -1,13 +1,22 @@
 <?php
 
-namespace Multition\Tests;
+namespace Tests;
 
-use Multition\Multition;
+use Multition;
 
-require_once __DIR__ . '/../Multiton.php';
+spl_autoload_register(function ($class) {
+    include __DIR__ . '/../' . $class . '.php';
+});
 
+/**
+ * Class MultitonTest
+ * @package Tests
+ */
 class MultitonTest
 {
+    /**
+     * Test get instance.
+     */
     public function test()
     {
         print_r(Multition::getInstance(Multition::INSTANCE_1));
@@ -16,5 +25,6 @@ class MultitonTest
     }
 }
 
+// Run test.
 $test = new MultitonTest;
 $test->test();
